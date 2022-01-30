@@ -3,7 +3,7 @@
 <img src="https://github.com/Shiweiliuiiiiiii/FreeTickets/blob/main/FreeTickets.png" width="800" height="300">
 
 
-**The Unreasonable Effectiveness of Random Pruning: Return of the Most Naive Baseline for Sparse Training*<br>
+**The Unreasonable Effectiveness of Random Pruning: Return of the Most Naive Baseline for Sparse Training**<br>
 Shiwei Liu, Tianlong Chen, Xiaohan Chen, Li Shen, Decebal Constantin Mocanu, Zhangyang Wang, Mykola Pechenizkiy
 
 https://openreview.net/forum?id=VBZJ_3tz-t
