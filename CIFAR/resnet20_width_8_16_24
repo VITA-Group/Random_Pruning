@@ -14,31 +14,8 @@ source activate torch151
 sparse_init=ERK
 data=cifar10
 
-model=cifar_resnet_20_8
-for seed in 18 19 20
-do
-    for density in 0.1
-    do
-        python main.py --seed $seed --sparse_init $sparse_init --fix --lr 0.1 --density $density --model $model --data $data --epoch 160
-    done
-done
-
-model=cifar_resnet_20_16
-for seed in 18 19 20
-do
-    for density in 0.1
-    do
-        python main.py --seed $seed --sparse_init $sparse_init --fix --lr 0.1 --density $density --model $model --data $data --epoch 160
-    done
-done
-
-model=cifar_resnet_20_24
-for seed in 18 19 20
-do
-    for density in 0.1
-    do
-        python main.py --seed $seed --sparse_init $sparse_init --fix --lr 0.1 --density $density --model $model --data $data --epoch 160
-    done
+for model in cifar_resnet_20 cifar_resnet_32 cifar_resnet_44 cifar_resnet_56 cifar_resnet_110
+    python main.py --seed 17 --sparse_init ERK --fix --lr 0.1 --density 0.05 --model $model --data cifar10 --epoch 160
 done
 
 conda deactivate torch151
