@@ -38,14 +38,16 @@ To train ResNet with various depths on CIFAR10/100:
 ```bash
 for model in cifar_resnet_20_8 cifar_resnet_20_16 cifar_resnet_20_24 
     python main.py --seed 17 --sparse_init ERK --fix --lr 0.1 --density 0.05 --model $model --data cifar10 --epoch 160
-
 done
+```
 
 ### ImageNet Experiments
 
+To train WideResNet50_2 on ImageNet with ERK_plus:
+
 ```bash
 cd ImageNet
-python $1multiproc.py --nproc_per_node 2 $1main.py --sparse_init ERK --multiplier 1 --growth gradient --seed 17 --master_port 4545 -j5 -p 500 --arch resnet50 -c fanin --update_frequency 4000 --label-smoothing 0.1 -b 64 --lr 0.1 --warmup 5 --epochs 310 --density 0.2 $2 ../data/
+python $1multiproc.py --nproc_per_node 4 $1main.py --sparse_init ERK_plus --fc_density 1.0 --fix --fp16 --master_port 5556 -j 10 -p 500 --arch WideResNet50_2 -c fanin --label-smoothing 0.1 -b 192 --lr 0.4 --warmup 5 --epochs 100 --density 0.2 --static-loss-scale 256 $2 ../../../../../../data1/datasets/imagenet2012/ --save save/
 ```
 
 # Citation
@@ -53,12 +55,12 @@ if you find this repo is helpful, please cite
 
 ```bash
 @inproceedings{
-liu2022deep,
-title={Deep Ensembling with No Overhead for either Training or Testing: The All-Round Blessings of Dynamic Sparsity},
-author={Shiwei Liu and Tianlong Chen and Zahra Atashgahi and Xiaohan Chen and Ghada Sokar and Elena Mocanu and Mykola Pechenizkiy and Zhangyang Wang and Decebal Constantin Mocanu},
+liu2022the,
+title={The Unreasonable Effectiveness of Random Pruning: Return of the Most Naive Baseline for Sparse Training},
+author={Shiwei Liu and Tianlong Chen and Xiaohan Chen and Li Shen and Decebal Constantin Mocanu and Zhangyang Wang and Mykola Pechenizkiy},
 booktitle={International Conference on Learning Representations},
 year={2022},
-url={https://openreview.net/forum?id=RLtqs6pzj1-}
+url={https://openreview.net/forum?id=VBZJ_3tz-t}
 }
 ```
 
