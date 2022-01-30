@@ -1,6 +1,6 @@
 # [ICLR 2022] The Unreasonable Effectiveness of Random Pruning: Return of the Most Naive Baseline for Sparse Training
 
-<img src="https://github.com/Shiweiliuiiiiiii/Random_Pruning/blob/main/depth_cf10-1.png" width="800" height="300">
+<img src="https://github.com/Shiweiliuiiiiiii/Random_Pruning/blob/main/depth_cf10-1.png" width="800" height="400">
 
 
 **The Unreasonable Effectiveness of Random Pruning: Return of the Most Naive Baseline for Sparse Training**<br>
