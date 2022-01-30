@@ -17,8 +17,15 @@ Python 3.6, PyTorch v1.5.1, and CUDA v10.2.
 
 ## How to Run Experiments
 
+Options:
+* --sparse - Enable sparse mode (remove this if want to train dense model)
+* --sparse-init - type of sparse initialization. Choose from: uniform, uniform_plus, ERK, ERK_plus, ER, snip, GraSP
+* --model (str) - cifar_resnet_A_B, where A is the depths and B is the width, e.g., cifar_resnet_20_32
+* --density (float) - density level (default 0.05)
+
+
 ### CIFAR-10/100 Experiments
-To train Wide ResNet28-10 on CIFAR10/100 with DST ensemble at sparsity 0.8:
+To train ResNet with various depths on CIFAR10/100:
 
 ```bash
 python main_DST.py --sparse --model wrn-28-10 --data cifar10 --seed 17 --sparse-init ERK \
