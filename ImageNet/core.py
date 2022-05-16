@@ -535,6 +535,8 @@ class Masking(object):
                     #self.remove_weight_partial_name(name, verbose=self.verbose)
 
     def apply_mask(self):
+        # synchronism masks
+        self.synchronism_masks()
         for module in self.modules:
             for name, tensor in module.named_parameters():
                 if name in self.masks:
@@ -747,3 +749,9 @@ class Masking(object):
         total_fired_weights = ntotal_fired_weights/ntotal_weights
         print('The percentage of the total fired weights is:', total_fired_weights)
         return layer_fired_weights, total_fired_weights
+    
+    def synchronism_masks(self):
+
+        for name in self.masks.keys():
+            torch.distributed.broadcast(self.masks[name], src=0, async_op=False)
+
