@@ -55,14 +55,12 @@ python $1multiproc.py --nproc_per_node 4 $1main.py --sparse_init ERK_plus --fc_d
 # Citation
 if you find this repo is helpful, please cite
 
-```bash
-@inproceedings{
-liu2022the,
-title={The Unreasonable Effectiveness of Random Pruning: Return of the Most Naive Baseline for Sparse Training},
-author={Shiwei Liu and Tianlong Chen and Xiaohan Chen and Li Shen and Decebal Constantin Mocanu and Zhangyang Wang and Mykola Pechenizkiy},
-booktitle={International Conference on Learning Representations},
-year={2022},
-url={https://openreview.net/forum?id=VBZJ_3tz-t}
+```
+@article{liu2022unreasonable,
+  title={The unreasonable effectiveness of random pruning: Return of the most naive baseline for sparse training},
+  author={Liu, Shiwei and Chen, Tianlong and Chen, Xiaohan and Shen, Li and Mocanu, Decebal Constantin and Wang, Zhangyang and Pechenizkiy, Mykola},
+  journal={arXiv preprint arXiv:2202.02643},
+  year={2022}
 }
 ```
 
