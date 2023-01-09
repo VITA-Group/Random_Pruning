@@ -277,7 +277,7 @@ class Masking(object):
         print('Total Model parameters:', total_size)
         print('Total parameters under sparsity level of {0}: {1}'.format(self.density, sparse_size / total_size))
 
-        # self.fired_masks = copy.deepcopy(self.masks) # used for ITOP
+        # self.fired_masks = copy.deepcopy(self.masks) # used to calculate ITOP reta (https://github.com/Shiweiliuiiiiiii/In-Time-Over-Parameterization)
         # self.print_nonzero_counts()
 
 
