@@ -19,7 +19,7 @@ Python 3.6, PyTorch v1.5.1, and CUDA v10.2.
 
 [Training module] The training module is controlled by the following arguments:
 * --sparse - Enable sparse mode (remove this if want to train dense model)
-* --fix - Fix the sparse pattern during training (remove this if want to with dynamic sparse training)
+* --fix - Fix the sparse pattern during training (remove this if want to do dynamic sparse training)
 * --sparse-init - Type of sparse initialization. Choose from: uniform, uniform_plus, ERK, ERK_plus, ER, snip (snip ratio), GraSP (GraSP ratio)
 * --model (str) - cifar_resnet_A_B, where A is the depths and B is the width, e.g., cifar_resnet_20_32
 * --density (float) - density level (default 0.05)
